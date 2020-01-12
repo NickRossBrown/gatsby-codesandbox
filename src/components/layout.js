@@ -8,12 +8,11 @@ import Hamburger from "./Hamburger"
 import Footer from "./Footer"
 
 import "./layout.css"
-// import "bootstrap/dist/css/bootstrap-grid.css"
+import "bootstrap/dist/css/bootstrap-grid.css"
 
-const Primary = styled.div`
-  padding: 110px;
+const Primary = styled.main`
+  padding: 110px 0 0 0;
 `
-
 const Layout = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -22,9 +21,20 @@ const Layout = ({ children }) => {
   }
   return (
     <>
-      <Hamburger />
+      <Hamburger handleOverlayMenu={handleOverlayMenu} />
+      <OverlayMenu menuOpen={menuOpen} callback={handleOverlayMenu} />
+      <Header />
+      <Primary id="primary" className="conent-area">
+        <main id="main" className="site-main" role="main">
+          {children}
+        </main>
+      </Primary>
     </>
   )
+}
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout

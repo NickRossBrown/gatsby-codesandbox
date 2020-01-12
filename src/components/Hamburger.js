@@ -1,4 +1,11 @@
 import React from "react"
+import PropTypes from "prop-types"
+import { HamburgerButton } from "./styles/HamburgerStyles"
+import HamburgerHeart from "../images/tango_heart_hamburger.svg"
 
-const Hamburger = () => <div>Hamburger</div>
+const Hamburger = ({ handleOverlayMenu }) => (
+  <HamburgerButton onClick={handleOverlayMenu} tabIndex="0">
+    <img src={HamburgerHeart} alt="hambergur-svg" />
+  </HamburgerButton>
+)
 export default Hamburger

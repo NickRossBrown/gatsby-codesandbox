@@ -1,11 +1,12 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-wordpress-headless",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "",
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "1.10.6",
+    "bootstrap": "4.4.1",
     "gatsby": "^2.18.12",
     "gatsby-awesome-pagination": "0.3.5",
     "gatsby-image": "^2.2.34",
@@ -27,9 +28,7 @@
   "devDependencies": {
     "prettier": "^1.19.1"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": [],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
