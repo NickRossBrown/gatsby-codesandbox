@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -25,6 +26,36 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: "gatsby-source-wordpress",
+      options: {
+        excludedRoutes: [
+          "/wp/v2/users/**",
+          "/wp/v2/themes",
+          "/wp/v2/settings*",
+        ],
+        baseUrl: "tango.startlearningreact.com",
+        protocol: "http",
+        hostingWPCOM: false,
+        useACF: true,
+        searchAndReplaceContentUrls: {
+          sourceURL: "http://tango.startlearningreact.com",
+          replacementUrl: "",
+        },
+      },
+    },
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: "getsby-plugin-prefetch-google-fonts",
+      options: {
+        fonts: [
+          {
+            family: "Teko",
+            variants: ["200", "300", "400", "500", "600", "700"],
+          },
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
