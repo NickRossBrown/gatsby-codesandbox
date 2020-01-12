@@ -5,6 +5,7 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     {
@@ -46,9 +47,8 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-styled-components`,
     {
-      resolve: "getsby-plugin-prefetch-google-fonts",
+      resolve: "gatsby-plugin-prefetch-google-fonts",
       options: {
         fonts: [
           {
